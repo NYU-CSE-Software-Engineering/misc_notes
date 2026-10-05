@@ -2,8 +2,8 @@
 This guide assumes you have a repo previously created without an existing Rails infrastructure. These steps should slide between steps #2 and #3 of the in-class assignment from 9/30/26.
 
 Do the following: 
-1 Clone the existing repo
-2 Create a Dockerfile (yes, that's the name of the file with no file extension) which contains the following. The Dockerfile should be saved in the top-level directory of the repo.
+1. Clone the existing repo
+2. Create a Dockerfile (yes, that's the name of the file with no file extension) which contains the following. The Dockerfile should be saved in the top-level directory of the repo.
 ```
 FROM ruby:3.3.8
 
