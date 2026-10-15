@@ -75,7 +75,7 @@ services:
 * Run `docker compose exec web bin/rails routes -g book` and point out the new `/authors/:author_id/books` paths.
 
 * Update BooksController:
-  * Add `before_action :set_author, with @author = Author.find(params[:author_id])`.
+  * Add `before_action :set_author` before the existing `set_book` callback, and define a private `set_author` method whose body is `@author = Author.find(params[:author_id])`.
   * Scope lookups through the parent: `@author.books` and `@author.books.build`. 
   * Redirect to `[@author, @book]` or `author_books_path(@author)`. 
 
