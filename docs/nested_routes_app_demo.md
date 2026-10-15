@@ -22,7 +22,7 @@ services:
   web:
     build:
       context: .
-    dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile.dev
     command: bin/rails server -b 0.0.0.0
     ports: ["3000:3000"]
     volumes: [".:/app"]
