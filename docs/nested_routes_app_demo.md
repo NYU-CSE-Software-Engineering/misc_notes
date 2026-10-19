@@ -56,14 +56,14 @@ docker compose exec web bin/rails ...
 * Create the Author resource and all of its components/files:
 ```bash
 docker compose exec web bin/rails generate scaffold Author name:string
-`
+```
 
 * Run the migration created by the above command so that the database can support the resource:
 ```bash
 docker compose exec web bin/rails db:migrate
 ```
 
-* Show the generated model, controller, views, and migration files (e.g. `app/models/*.rb`, `app/controllers/*.rb`, `app/views/authors/*.erb`).
+* Show the generated model, controller, views, and migration files (e.g. `app/models/*.rb`, `app/controllers/*.rb`, `app/views/authors/*.erb`, `app/db/migrate/*.rb).
 
 * Visit `/authors`, create a couple of authors, and show `docker compose exec web bin/rails routes -g author` to explain what `resources :authors` gives you.
 
@@ -173,7 +173,6 @@ end
   * Remove the `author-ID` field from the book form, since the parent is now implied by the URL. 
   * Update `authors/show.html.erb` to list the author’s books and add a "Add book" link to `new_author_book_path(@author)`.
   * Walk through the flow live: `author`, then their `books`, then add a book.
-  * Optional: mention `shallow: true` as a common alternative.
 
 ## Part 6: Wrap-up
 * Set the application root to `authors#index` in `config/routes.rb`. 
@@ -184,4 +183,4 @@ relationship in the URL.
 * Optional extras if time allows: a validation (`validates :title, presence: true`) or showing the SQL in the server
 logs.
 
-* The rule of thumb is that <%= %> is for tags that should display a value, such as `<%= book.title %>`, and `<% %>` is for control flow like `each`, `if`, and `end`.
+* In views, the rule of thumb is that <%= %> is for tags that should display a value, such as `<%= book.title %>`, and `<% %>` is for control flow like `each`, `if`, and `end`.
